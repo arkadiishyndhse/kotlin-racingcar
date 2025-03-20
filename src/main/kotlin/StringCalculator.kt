@@ -9,4 +9,10 @@ class StringCalculator {
             throw IllegalArgumentException("Invalid characters in input")
         }
     }
+
+    private fun add(a: Double, b: Double) = a + b
+    private fun subtract(a: Double, b: Double) = a - b
+    private fun multiply(a: Double, b: Double) = a * b
+    private fun divide(a: Double, b: Double) = a / b
+
 }
