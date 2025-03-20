@@ -1,8 +1,12 @@
 class StringCalculator {
 
-    fun calculate(expression: String): Double {
+    fun calculate(expression: String?): Double {
         validateExpression(expression)
-        return computeResult(expression)
+
+        val tokens = expression!!.split(" ")
+        if (tokens.size % 2 == 0) throw IllegalArgumentException("Invalid expression format")
+
+        return computeResult(tokens)
     }
 
     private fun validateExpression(expression: String?) {
@@ -15,9 +19,9 @@ class StringCalculator {
         }
     }
 
-    private fun computeResult(expression: String): Double {
-        val tokens = expression.split(" ")
-        var result = 0.0
+    private fun computeResult(tokens: List<String>): Double {
+
+        var result = tokens[0].toDouble()
 
         for (i in 1 until tokens.size step 2) {
             val operator = tokens[i]
@@ -28,7 +32,7 @@ class StringCalculator {
                 "-" -> subtract(result, operand)
                 "*" -> multiply(result, operand)
                 "/" -> divide(result, operand)
-                else -> 0.0
+                else -> throw IllegalArgumentException("Unsupported operator: $operator")
             }
         }
         return result
@@ -37,6 +41,8 @@ class StringCalculator {
     private fun add(a: Double, b: Double) = a + b
     private fun subtract(a: Double, b: Double) = a - b
     private fun multiply(a: Double, b: Double) = a * b
-    private fun divide(a: Double, b: Double) = a / b
-
+    private fun divide(a: Double, b: Double): Double {
+        if (b == 0.0) throw IllegalArgumentException("Division by zero is not allowed")
+        return a / b
+    }
 }
