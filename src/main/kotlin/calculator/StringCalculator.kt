@@ -1,3 +1,5 @@
+package calculator
+
 class StringCalculator {
 
     fun calculate(expression: String?): Double {
