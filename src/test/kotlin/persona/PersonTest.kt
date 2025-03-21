@@ -1,7 +1,9 @@
+package persona
+
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-data class Person(val name: String, var age: Int?, var nickname: String = "") {}
+
 
 class PersonTest {
     @Test
