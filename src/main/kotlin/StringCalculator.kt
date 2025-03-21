@@ -4,8 +4,6 @@ class StringCalculator {
         validateExpression(expression)
 
         val tokens = expression!!.split(" ")
-        if (tokens.size % 2 == 0) throw IllegalArgumentException("Invalid expression format")
-
         return computeResult(tokens)
     }
 
