@@ -30,6 +30,7 @@ class StringCalculatorTest {
             .hasMessageContaining("Invalid characters in input")
     }
 
+
     @ParameterizedTest
     @ValueSource(strings = ["", "  "])
     fun `null or blank input should throw exception`(expression: String) {
