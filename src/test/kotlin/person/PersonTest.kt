@@ -1,18 +1,17 @@
-package persona
+package person
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-
-
 class PersonTest {
     @Test
     fun `named arguments`() {
-        val people = listOf(
-        Person("Arkadii Shyn", 40, "Arkadii"),
-        Person(name = "Arkadii Shyn", nickname = "Arkadii", age = 40),
-        Person(nickname = "Arkadii", name = "Arkadii Shyn",  age = 40),
-        )
+        val people =
+            listOf(
+                Person("Arkadii Shyn", 40, "Arkadii"),
+                Person(name = "Arkadii Shyn", nickname = "Arkadii", age = 40),
+                Person(nickname = "Arkadii", name = "Arkadii Shyn", age = 40),
+            )
         assertThat(people).allSatisfy {
             assertThat(it.name).isEqualTo("Arkadii Shyn")
             assertThat(it.age).isEqualTo(40)
