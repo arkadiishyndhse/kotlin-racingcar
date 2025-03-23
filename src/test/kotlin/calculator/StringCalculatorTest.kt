@@ -1,11 +1,11 @@
 package calculator
 
-import org.assertj.core.api.Assertions.*
+import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import org.junit.jupiter.params.provider.ValueSource
-
 
 class StringCalculatorTest {
     private val calculator = StringCalculator()
@@ -30,7 +30,6 @@ class StringCalculatorTest {
             .hasMessageContaining("Invalid characters in input")
     }
 
-
     @ParameterizedTest
     @ValueSource(strings = ["", "  "])
     fun `null or blank input should throw exception`(expression: String) {
@@ -50,10 +49,12 @@ class StringCalculatorTest {
         "5 - 2 + 8, 11.0",
         "1 + 1 + 1 + 1, 4.0",
         "10 - 3 - 2, 5.0",
-        "8 / 2 * 2, 8.0"
+        "8 / 2 * 2, 8.0",
     )
-    fun `test valid arithmetic expressions`(expression: String, expectedResult: Double) {
+    fun `test valid arithmetic expressions`(
+        expression: String,
+        expectedResult: Double,
+    ) {
         assertThat(calculator.calculate(expression)).isEqualTo(expectedResult)
     }
-
 }
