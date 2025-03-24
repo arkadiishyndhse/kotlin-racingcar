@@ -3,10 +3,10 @@ package carracing
 import kotlin.random.Random
 
 class Car {
-    private var position: Int = 0;
+    private var position: Int = 0
 
     fun move() {
-        if(Random.nextInt(10) >= 4) {
+        if (Random.nextInt(10) >= 4) {
             position++
         }
     }

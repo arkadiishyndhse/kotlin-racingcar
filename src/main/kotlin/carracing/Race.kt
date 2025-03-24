@@ -15,6 +15,6 @@ class Race(
     }
 
     private fun displayRace() {
-        cars.forEach{ car -> println("$car") }
+        cars.forEach { car -> println("$car") }
     }
 }
