@@ -10,3 +10,4 @@
 ## Step 2 - Car Racing
 1. Car class
 2. Race class
+3. Display race
