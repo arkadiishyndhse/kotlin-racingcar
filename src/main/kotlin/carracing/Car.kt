@@ -18,4 +18,10 @@ class Car(private val name: String) {
     override fun toString(): String {
         return "$name: " + "-".repeat(position)
     }
+
+    fun getPosition(): Int = position
+
+    fun compareTo(other: Car): Int {
+        return this.position.compareTo(other.position)
+    }
 }

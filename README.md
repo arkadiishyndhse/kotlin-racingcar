@@ -14,3 +14,4 @@
 
 ## Staep 4 - Car Racing (Winner Determination)
 1. Add name to the Car class
+2. Add winners
