@@ -6,3 +6,6 @@
 3. Execution
 4. Error handling
 5. Unit tests
+
+## Step 2 - Car Racing
+1. Car class
