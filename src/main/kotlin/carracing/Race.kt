@@ -1,10 +1,10 @@
 package carracing
 
 class Race(
-    private val numCars: Int,
+    private val carNames: List<String>,
     private val numRounds: Int,
 ) {
-    private val cars = List(numCars) { Car() }
+    private val cars = carNames.map { Car(it) }
 
     fun start() {
         for (round in 1..numRounds) {
