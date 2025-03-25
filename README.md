@@ -7,7 +7,11 @@
 4. Error handling
 5. Unit tests
 
-## Step 2 - Car Racing
+## Step 3 - Car Racing
 1. Car class
 2. Race class
 3. Display race
+
+## Staep 4 - Car Racing (Winner Determination)
+1. Add name to the Car class
+2. Add winners
