@@ -1,6 +1,6 @@
 package carracing
 
-import kotlin.random.Random
+private const val MOVE_THRESHOLD = 4
 
 class Car(private val name: String) {
     init {
@@ -9,8 +9,8 @@ class Car(private val name: String) {
 
     private var position: Int = 0
 
-    fun move() {
-        if (Random.nextInt(10) >= 4) {
+    fun move(random: Int) {
+        if (random >= MOVE_THRESHOLD) {
             position++
         }
     }

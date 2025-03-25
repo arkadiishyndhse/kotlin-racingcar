@@ -1,25 +1,25 @@
 package carracing
 
+import kotlin.random.Random
+
 class Race(
-    private val carNames: List<String>,
+    carNames: List<String>,
     private val numRounds: Int,
 ) {
     private val cars = carNames.map { Car(it) }
 
     fun start() {
         for (round in 1..numRounds) {
-            cars.forEach { it.move() }
+            cars.forEach { it.move(Random.nextInt(10)) }
             displayRace()
-            println()
         }
-        displayWinners()
     }
 
     private fun displayRace() {
         cars.forEach { car -> println("$car") }
     }
 
-    private fun displayWinners() {
+    fun displayWinners() {
         val maxPosition = cars.maxOf { it.getPosition() }
         val winners = cars.filter { it.getPosition() == maxPosition }
         println("\uD83C\uDFC6 Winners: " + winners.joinToString(", ") + " \uD83C\uDFC6")

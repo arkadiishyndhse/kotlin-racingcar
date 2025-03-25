@@ -11,4 +11,5 @@ fun main() {
     println("Race Results:")
     val race = Race(carNames, numRounds)
     race.start()
+    race.displayWinners()
 }
