@@ -12,7 +12,6 @@ class Race(
             displayRace()
             println()
         }
-        displayWinners()
     }
 
     private fun displayRace() {
